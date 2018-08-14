@@ -1,0 +1,24 @@
+
+{% extends "sys_web/base.html" %}
+
+{% block container %}
+{% if heading %}
+<h3>{{heading}}</h3>
+{% endif %}
+
+{% for decisor in decisores %}
+<table>
+</br>
+{{decisor.name}}
+</br> 
+    {% for conjuntocriterio in criterios %}
+        {{conjuntocriterio}}
+        </br>
+    {% endfor %}
+</table>
+
+{% endfor %}
+
+
+
+{% endblock %}
