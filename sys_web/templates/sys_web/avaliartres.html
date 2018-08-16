@@ -1,0 +1,285 @@
+
+{% extends "sys_web/base.html" %}
+
+{% block container %}
+{% if heading %}
+<h3>{{heading}}</h3>
+{% endif %}
+
+<table>
+     <form method="post">
+          {% csrf_token %}
+  <tr>
+
+    <th>criterio 1 - {{dados.criterio1}}</th> 
+
+  </tr>
+  <tr>
+    <td>alternativa 1 - {{dados.alternativa1}}   X   alternativa 2  -  {{dados.alternativa2}}</td>
+
+  </tr>
+
+  <tr>
+  
+    <td>
+    <input type="radio" name="c1a1a2" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c1a1a2" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c1a1a2" value=-1> Pior&ensp;
+
+        <input type="radio" name="c1a1a2" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c1a1a2" value=1> Melhor&ensp;
+
+        <input type="radio" name="c1a1a2" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c1a1a2" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+
+  </tr>
+</br></br>
+
+  <tr>
+    <td>alternativa 1 - {{dados.alternativa1}}   X   alternativa 3  -  {{dados.alternativa3}}</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+    <input type="radio" name="c1a1a3" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c1a1a3" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c1a1a3" value=-1> Pior&ensp;
+
+        <input type="radio" name="c1a1a3" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c1a1a3" value=1> Melhor&ensp;
+
+        <input type="radio" name="c1a1a3" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c1a1a3" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+
+  </tr>
+
+  <tr>
+    <td>alternativa 2 - {{dados.alternativa2}}   X   alternativa 3  -  {{dados.alternativa3}}</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+    <input type="radio" name="c1a2a3" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c1a2a3" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c1a2a3" value=-1> Pior&ensp;
+
+        <input type="radio" name="c1a2a3" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c1a2a3" value=1> Melhor&ensp;
+
+        <input type="radio" name="c1a2a3" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c1a2a3" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+  </tr>
+</br>
+</table>
+
+<table style="margin-top: -50px">
+  <tr>
+
+    <th>criterio 2 - {{dados.criterio2}}</th> 
+
+  </tr>
+  <tr>
+    <td>alternativa 1 - {{dados.alternativa1}}   X   alternativa 2  -  {{dados.alternativa2}}</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+    <input type="radio" name="c2a1a2" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c2a1a2" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c2a1a2" value=-1> Pior&ensp;
+
+        <input type="radio" name="c2a1a2" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c2a1a2" value=1> Melhor&ensp;
+
+        <input type="radio" name="c2a1a2" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c2a1a2" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+  </tr>
+</br></br>
+
+  <tr>
+    <td>alternativa 1 - {{dados.alternativa1}}   X   alternativa 3  -  {{dados.alternativa3}}</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+    <input type="radio" name="c2a1a3" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c2a1a3" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c2a1a3" value=-1> Pior&ensp;
+
+        <input type="radio" name="c2a1a3" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c2a1a3" value=1> Melhor&ensp;
+
+        <input type="radio" name="c2a1a3" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c2a1a3" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+  </tr>
+</br>
+</br>
+  <tr>
+    <td>alternativa 2 - {{dados.alternativa2}}   X   alternativa 3  -  {{dados.alternativa3}}</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+    <input type="radio" name="c2a2a3" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c2a2a3" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c2a2a3" value=-1> Pior&ensp;
+
+        <input type="radio" name="c2a2a3" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c2a2a3" value=1> Melhor&ensp;
+
+        <input type="radio" name="c2a2a3" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c2a2a3" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+  </tr>
+</br>
+
+
+</table>
+
+
+<table style="margin-top: -50px">
+  <tr>
+
+    <th>criterio 3 - {{dados.criterio3}}</th> 
+
+  </tr>
+  <tr>
+    <td>alternativa 1 - {{dados.alternativa1}}   X   alternativa 2  -  {{dados.alternativa2}}</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+    <input type="radio" name="c3a1a2" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c3a1a2" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c3a1a2" value=-1> Pior&ensp;
+
+        <input type="radio" name="c3a1a2" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c3a1a2" value=1> Melhor&ensp;
+
+        <input type="radio" name="c3a1a2" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c3a1a2" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+
+  </tr>
+</br></br>
+
+  <tr>
+    <td>alternativa 1 - {{dados.alternativa1}}   X   alternativa 3  -  {{dados.alternativa3}}</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+    <input type="radio" name="c3a1a3" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c3a1a3" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c3a1a3" value=-1> Pior&ensp;
+
+        <input type="radio" name="c3a1a3" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c3a1a3" value=1> Melhor&ensp;
+
+        <input type="radio" name="c3a1a3" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c3a1a3" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+
+  </tr>
+</br>
+</br>
+  <tr>
+    <td>alternativa 2 - {{dados.alternativa2}}   X   alternativa 3  -  {{dados.alternativa3}}</td>
+
+  </tr>
+
+  <tr>
+
+    <td>
+    <input type="radio" name="c3a2a3" value=-3> Absolutamente Pior&ensp;
+ 
+      <input type="radio" name="c3a2a3" value=-2> Muito Pior&ensp;
+
+      <input type="radio" name="c3a2a3" value=-1> Pior&ensp;
+
+        <input type="radio" name="c3a2a3" value=0> equivalente&ensp;
+ 
+        <input type="radio" name="c3a2a3" value=1> Melhor&ensp;
+
+        <input type="radio" name="c3a2a3" value=2> Muito melhor&ensp;
+
+        <input type="radio" name="c3a2a3" value=3> Absolu. melhor&ensp;
+
+      </td>
+
+
+  </tr>
+</br>
+
+ 
+</table>
+  <button type="submit" class="btn btn-default" style="margin-top: 40px">Processar</button>
+ </form>
+{% endblock %}

@@ -1,10 +1,13 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Decisor, Criterio, Alternativa
+from .models import *
 
 
-admin.site.register(Decisor)
+admin.site.register(Dados)
+admin.site.register(Criterios)
+admin.site.register(Avaliarum)
+admin.site.register(Avaliardois)
+admin.site.register(Avaliartres)
 
-admin.site.register(Criterio)
-admin.site.register(Alternativa)
+

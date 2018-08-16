@@ -6,7 +6,9 @@ from . import views
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("criterios", views.criterios, name="criterios"),
-    path("alternativas", views.alternativas, name="alternativas"),
-    path("avaliacriterios", views.avalia_criterios, name="avaliacriterios"),
+    path("avaliacriterios", views.avaliacriterios, name="avaliacriterios"),
+    path("avaliarum", views.avaliarum, name="avaliarum"),
+    path("avaliardois", views.avaliardois, name="avaliardois"),
+    path("avaliartres", views.avaliartres, name="avaliartres"),
+    path("resultado", views.resultado, name="resultado"),
 ] 

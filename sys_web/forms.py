@@ -4,129 +4,33 @@ from django.forms import (formset_factory, modelformset_factory)
 from .models import *
 
 
-class DecisorForm(forms.Form):
-    name = forms.CharField(
-        label='Decisor name',
-        widget=forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Decisor name'
-        })
-    )
-
-
-class DecisorModelForm(forms.ModelForm):
-
+class DadosForm(forms.ModelForm):
     class Meta:
-        model = Decisor
-        fields = ('name', )
-        labels = {
-            'name': 'Decisor name'
-        }
-        widgets = {
-            'name': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Decisor name'
-                }
-            )
-        }
+        model = Dados
+        fields = ("criterio1", "criterio2", "criterio3","decisor1", "decisor2", "decisor3","alternativa1", "alternativa2", "alternativa3",)
 
 
-DecisorFormset = formset_factory(DecisorForm)
-DecisorModelFormset = modelformset_factory(
-    Decisor,
-    fields=('name', ),
-    extra=1,
-    widgets={
-        'name': forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Decisor name'
-            }
-        )
-    }
-)
-
-
-class CriterioForm(forms.Form):
-    name = forms.CharField(
-        label='Criterio nome',
-        widget=forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Criterio Nome'
-        })
-    )
-
-
-class CriterioModelForm(forms.ModelForm):
-
+class CriteriosForm(forms.ModelForm):
     class Meta:
-        model = Criterio
-        fields = ('name', )
-        labels = {
-            'name': 'Criterio nome'
-        }
-        widgets = {
-            'name': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Criterio nome'
-                }
-            )
-        }
-
-CriterioFormset = formset_factory(CriterioForm)
-CriterioModelFormset = modelformset_factory(
-    Criterio,
-    fields=('name', ),
-    extra=1,
-    widgets={
-        'name': forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Criterio nome'
-            }
-        )
-    }
-)
+        model = Criterios
+        fields = ("d1c1c2","d1c1c3","d1c2c3","d2c1c2","d2c1c3","d2c2c3","d3c1c2","d3c1c3","d3c2c3",)
 
 
-class AlternativaForm(forms.Form):
-    name = forms.CharField(
-        label='Alternativa name',
-        widget=forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Alternativa name'
-        })
-    )
-
-
-class AlternativaModelForm(forms.ModelForm):
-
+class AvaliarumForm(forms.ModelForm):
     class Meta:
-        model = Alternativa
-        fields = ('name', )
-        labels = {
-            'name': 'Alternativa name'
-        }
-        widgets = {
-            'name': forms.TextInput(attrs={
-                'class': 'form-control',
-                'placeholder': 'Alternativa name'
-                }
-            )
-        }
+        model = Avaliarum
+        fields = ("c1a1a2","c1a1a3","c1a2a3","c2a1a2","c2a1a3","c2a2a3","c3a1a2","c3a1a3","c3a2a3",)
 
 
-AlternativaFormset = formset_factory(AlternativaForm)
-AlternativaModelFormset = modelformset_factory(
-    Alternativa,
-    fields=('name', ),
-    extra=1,
-    widgets={
-        'name': forms.TextInput(attrs={
-            'class': 'form-control',
-            'placeholder': 'Alternativa name'
-            }
-        )
-    }
-)
+class AvaliardoisForm(forms.ModelForm):
+    class Meta:
+        model = Avaliardois
+        fields = ("c1a1a2","c1a1a3","c1a2a3","c2a1a2","c2a1a3","c2a2a3","c3a1a2","c3a1a3","c3a2a3",)
 
+
+class AvaliartresForm(forms.ModelForm):
+    class Meta:
+        model = Avaliartres
+        fields = ("c1a1a2","c1a1a3","c1a2a3","c2a1a2","c2a1a3","c2a2a3","c3a1a2","c3a1a3","c3a2a3",)
 
 

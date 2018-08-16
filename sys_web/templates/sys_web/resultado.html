@@ -1,0 +1,35 @@
+{% extends "sys_web/base.html" %}
+
+{% block container %}
+{% if heading %}
+<h3>{{heading}}</h3>
+{% endif %}
+
+
+<address>
+<h3>Pesos</h3><br> 
+ critério {{dados.criterio1}}  -  {{peso_final.0}}<br>
+ critério {{dados.criterio2}}  -  {{peso_final.1}}<br>
+ critério {{dados.criterio3}}  -  {{peso_final.2}}<br>
+</address>
+
+
+<h3>Ordenação</br>
+</h3>
+1º -- {{ resultado.0.0}} -- {{ resultado.0.1}}
+</br></br>
+
+2º -- {{ resultado.1.0}} -- {{ resultado.1.1}}
+</br></br>
+3º -- {{ resultado.2.0}} -- {{ resultado.2.1}}
+
+
+
+
+
+
+
+{% endblock %}
+
+{% block custom_js %}
+{% endblock %}

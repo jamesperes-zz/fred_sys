@@ -2,89 +2,103 @@
 
 {% block container %}
 {% if heading %}
-<h3>{{heading}}</h3>
+<h3>SAPEVO-M</h3>
 {% endif %}
-<form class="form-horizontal" method="POST" action="">
-    {% csrf_token %}
-{{ formset.management_form }}
-{% for form in formset %}
-<div class="row form-row spacer">
-    <div class="col-2">
-        <label>{{form.name.label}}</label>
-    </div>
-    <div class="col-4">
-        <div class="input-group">
-            {{form.name}}
-            <div class="input-group-append">
-                <button class="btn btn-success add-form-row">+</button>
-            </div>
-        </div>
-    </div>
+
+     <form method="post">
+          {% csrf_token %}
+
+  <legend>Agentes Decisores:</legend>
+  <div class="username">
+    <label for="uname">Decisor 1:</label>
+    <input type="text" id="id_decisor1" name="decisor1" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+
+  <div class="username">
+    <label for="uname">Decisor 2:</label>
+    <input type="text" id="id_decisor2" name="decisor2" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+
+  <div class="username">
+    <label for="uname">Decisor 3:</label>
+    <input type="text" id="id_decisor3" name="decisor3" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+
+
+
+
+<fieldset>
+  <legend>Critérios:</legend>
+
+  <div class="username">
+    <label for="uname">Criterio 1:</label>
+    <input type="text" id="id_criterio1" name="criterio1" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+
+  <div class="username">
+    <label for="uname">Criterio 2:</label>
+    <input type="text" id="id_criterio2" name="criterio2" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+
+  <div class="username">
+    <label for="uname">Criterio 3:</label>
+    <input type="text" id="id_criterio3" name="criterio3" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+
+</fieldset>
+
+
+<fieldset>
+  <legend>Alternativas:</legend>
+
+  <div class="username">
+    <label for="uname">Alternativa 1:</label>
+    <input type="text" id="alternativa1" name="alternativa1" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+
+  <div class="username">
+    <label for="uname">alternativa 2:</label>
+    <input type="text" id="alternativa2" name="alternativa2" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+
+  <div class="username">
+    <label for="uname">Alternativa 3:</label>
+    <input type="text" id="alternativa3" name="alternativa3" required
+      minlength="3" maxlength="16"
+      placeholder="" />
+  </div>
+    <button type="submit" class="btn btn-default">Cadastrar</button>
+
+  </form>
+
+</br>
+<div style="margin-top: 40px">
+
 </div>
-{% endfor %}
-<div class="row spacer">
-    <div class="col-4 offset-2">
-        <button type="submit" class="btn btn-block btn-primary">Create</button>
-    </div>
-</div>
-</form>
+
+<address>
+Escrito por <a href="mailto:luiz_frederico@id.uff.br">Luiz Frederico</a>.<br> 
+Orientado por:  Profº Carlos Francisco Simões Gomes<br>
+Universidade Federal Fluminense<br>
+</address>
+
 {% endblock %}
 
 {% block custom_js %}
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script type="text/javascript">
-function updateElementIndex(el, prefix, ndx) {
-    var id_regex = new RegExp('(' + prefix + '-\\d+)');
-    var replacement = prefix + '-' + ndx;
-    if ($(el).attr("for")) $(el).attr("for", $(el).attr("for").replace(id_regex, replacement));
-    if (el.id) el.id = el.id.replace(id_regex, replacement);
-    if (el.name) el.name = el.name.replace(id_regex, replacement);
-}
-function cloneMore(selector, prefix) {
-    var newElement = $(selector).clone(true);
-    var total = $('#id_' + prefix + '-TOTAL_FORMS').val();
-    newElement.find(':input').each(function() {
-        var name = $(this).attr('name')
-        if(name) {
-            name = name.replace('-' + (total-1) + '-', '-' + total + '-');
-            var id = 'id_' + name;
-            $(this).attr({'name': name, 'id': id}).val('').removeAttr('checked');
-        }
-    });
-    total++;
-    $('#id_' + prefix + '-TOTAL_FORMS').val(total);
-    $(selector).after(newElement);
-    var conditionRow = $('.form-row:not(:last)');
-    conditionRow.find('.btn.add-form-row')
-    .removeClass('btn-success').addClass('btn-danger')
-    .removeClass('add-form-row').addClass('remove-form-row')
-    .html('-');
-    return false;
-}
-function deleteForm(prefix, btn) {
-    var total = parseInt($('#id_' + prefix + '-TOTAL_FORMS').val());
-    if (total > 1){
-        btn.closest('.form-row').remove();
-        var forms = $('.form-row');
-        $('#id_' + prefix + '-TOTAL_FORMS').val(forms.length);
-        for (var i=0, formCount=forms.length; i<formCount; i++) {
-            $(forms.get(i)).find(':input').each(function() {
-                updateElementIndex(this, prefix, i);
-            });
-        }
-    }
-    return false;
-}
-$(document).on('click', '.add-form-row', function(e){
-    e.preventDefault();
-    cloneMore('.form-row:last', 'form');
-    return false;
-});
-$(document).on('click', '.remove-form-row', function(e){
-    e.preventDefault();
-    deleteForm('form', $(this));
-    return false;
-});
-
-</script>
 {% endblock %}
